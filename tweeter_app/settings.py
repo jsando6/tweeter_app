@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'bootstrap4', # new
+
     'users',
-    'tweets', # new
+    'tweets',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser' # new
@@ -59,7 +62,7 @@ ROOT_URLCONF = 'tweeter_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [(os.path.join(BASE_DIR, 'templates')), ], # new
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
