@@ -39,12 +39,28 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework',
+    'rest_framework.authtoken', # new
+    'rest_auth', # new
     'bootstrap4',
-    'bootstrap_datepicker_plus', # new
+    'bootstrap_datepicker_plus',
 
     'users',
     'tweets',
+    'api',
 ]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        # 'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [ # new
+        'rest_framework.authentication.TokenAuthentication', # new
+        'rest_framework.authentication.SessionAuthentication', # new
+],
+}
 
 AUTH_USER_MODEL = 'users.CustomUser' # new
 

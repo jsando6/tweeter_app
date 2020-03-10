@@ -12,6 +12,8 @@ gunicorn = "*"
 django-heroku = "*"
 django-bootstrap4 = "*"
 django-bootstrap-datepicker-plus = "*"
+djangorestframework = "*"
+django-rest-auth = "*"
 
 [requires]
 python_version = "3.7"
